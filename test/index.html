@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="../../es6-promise/es6-promise.auto.min.js"></script>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+  </head>
+  <body>
+    <script>
+        // TODO: remove "?dom=shadow" in Polymer 2.0
+        WCT.loadSuites([
+            'ing-uic-card.spec.html?wc-shadydom=true&wc-ce=true',
+            'ing-uic-card.spec.html?dom=shadow',
+            'ing-uic-service-card.spec.html?wc-shadydom=true&wc-ce=true',
+            'ing-uic-service-card.spec.html?dom=shadow',
+            'ing-uic-card-plug-on.spec.html?wc-shadydom=true&wc-ce=true',
+            'ing-uic-card-plug-on.spec.html?dom=shadow'
+        ]);
+    </script>
+
+</body></html>

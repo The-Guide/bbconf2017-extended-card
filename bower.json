@@ -1,0 +1,14 @@
+{
+  "name": "extended-card",
+  "version": "0.1",
+  "team": "bbconf",
+  "ignore": [
+    "/.*"
+  ],
+  "dependencies": {
+    "simple-card": "https://github.com/The-Guide/bbconf2017-simple-card-component.git"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
+}

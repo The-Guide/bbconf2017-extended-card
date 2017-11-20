@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="../../es6-promise/es6-promise.auto.min.js"></script>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <!-- Step 1: import the element to test -->
+    <link rel="import" href="../ing-uic-card-plug-on.html">
+    <link rel="import" href="../../ing-uif-icons/ing-uif-ing-symbol-icons.html"></link>
+</head>
+<body>
+
+<!-- You can use the document as a place to set up your fixtures. -->
+<test-fixture id="basic">
+    <template>
+        <ing-uic-card-plug-on slot="plug-ons" href="#"></ing-uic-card-plug-on>
+    </template>
+</test-fixture>
+
+<test-fixture id="extended">
+    <template>
+        <ing-uic-card-plug-on slot="plug-ons" href="#" target="_self" icon="ing-symbol:plus" icon-label="add"></ing-uic-card-plug-on>
+    </template>
+</test-fixture>
+
+<test-fixture id="external">
+    <template>
+        <ing-uic-card-plug-on slot="plug-ons" href="#" external-link></ing-uic-card-plug-on>
+    </template>
+</test-fixture>
+
+<script>
+    describe('ing-uic-card-plug-on', function() {
+        var plugOn, plugOnLink, plugOnElement;
+
+        context('default card-plug-on', function() {
+            beforeEach(function() {
+                plugOn = fixture('basic');
+                plugOnLink = plugOn.$$('.plug-on-link');
+            });
+
+            it('elements exists', function() {
+                expect(plugOn.is).to.equal('ing-uic-card-plug-on');
+            });
+
+            it('link has a href', function() {
+                expect(plugOnLink.hasAttribute('href')).to.exist;
+                expect(plugOnLink.getAttribute('href')).to.equal('#');
+            });
+
+            it('has an arrow-icon', function() {
+                expect(plugOn.$$('.plug-on-arrow')).to.exist;
+                expect(plugOn.$$('.plug-on-arrow').icon).to.equal('ing-arrow:chevron-open-right');
+
+            });
+        });
+
+        context('extended card-plug-on', function() {
+            beforeEach(function() {
+                plugOn = fixture('extended');
+                plugOnLink = plugOn.$$('.plug-on-link');
+                plugOnElement = plugOn.$$('.plug-on-element');
+            });
+
+            it('has an addon icon', function(done) {
+                flush(function() {
+                    expect(plugOnElement.querySelector('.plug-on-addon-icon')).to.exist;
+                    expect(plugOnElement.querySelector('.plug-on-addon-icon').icon).to.equal('ing-symbol:plus');
+                    done();
+                });
+            });
+
+            it('has an icon with a label', function(done) {
+                flush(function() {
+                    var srText = plugOnElement.querySelector('.sr-only');
+                    expect(srText).to.exist;
+                    expect(srText.innerText).to.equal('add');
+                    done();
+                });
+            });
+
+            it('link has a target', function() {
+                expect(plugOnLink.hasAttribute('target')).to.exist;
+                expect(plugOnLink.getAttribute('target')).to.equal('_self');
+            });
+        });
+        context('external-link card-plug-on', function() {
+            beforeEach(function() {
+                plugOn = fixture('external');
+                plugOnLink = plugOn.$$('.plug-on-link');
+            });
+
+            it('elements exists', function() {
+                expect(plugOn.is).to.equal('ing-uic-card-plug-on');
+            });
+
+            it('link has a href', function() {
+                expect(plugOnLink.hasAttribute('href')).to.exist;
+                expect(plugOnLink.getAttribute('href')).to.equal('#');
+            });
+
+            it('has an external-icon', function() {
+                expect(plugOn.$$('.plug-on-arrow')).to.exist;
+                expect(plugOn.$$('.plug-on-arrow').icon).to.equal('ing-navigation:external-link');
+            });
+        });
+    });
+
+    a11ySuite('extended');
+</script>
+
+</body>
+</html>
