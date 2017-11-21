@@ -1,7 +1,7 @@
 {
-  "name": "ing-uic-card",
-  "version": "4.1.6",
-  "description": "A uic-card is a sheet of material that serves as an entry point to more detailed information.",
+  "name": "extended-card",
+  "version": "0.0.1",
+  "description": "An extended-card is a sheet of material that serves as an entry point to more detailed information.",
   "main": "all-imports.html",
   "devDependencies": {
     "concurrently": "^3.5.0",

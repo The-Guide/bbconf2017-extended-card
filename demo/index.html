@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>ing-uic-card Demo</title>
+  <title>Extended-card Demo</title>
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
-  <link rel="import" href="../ing-uic-card.html">
+  <link rel="import" href="../extended-card.html">
 
 </head>
 <body unresolved style="width: 90%; max-width: 980px; margin:0 auto;">
 
-<h1 class="sr-only">Example page of the ing-uic-card</h1>
+<h1 class="sr-only">Example page of the extended-card</h1>
 
 <h2 class="font-b-xl">An basic example</h2>
 
-    <ing-uic-card>
+    <extended-card last-updated="6">
       <h3 slot="header">Title</h3>
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius quam quam. Praesent gravida urna id
@@ -30,12 +30,12 @@
       <div slot="footer">
         Last updated 3 mins ago
       </div>
-    </ing-uic-card>
+    </extended-card>
 
 
 <h2 class="font-b-xl">An example without header</h2>
 
-    <ing-uic-card>
+    <extended-card>
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius quam quam. Praesent gravida urna id
         nunc luctus, nec varius tortor tristique. Mauris non sem vel magna consectetur sodales. Aenean ut urna
@@ -46,7 +46,7 @@
       </div>
 
 
-    </ing-uic-card>
+    </extended-card>
 
 
 <h2 class="font-b-xl">An example of an article card</h2>
@@ -54,7 +54,7 @@
   This is an example of the article card which has an image on top, a title and body text.
 </p>
 
-    <ing-uic-card>
+    <extended-card>
       <img src="assets/images/dummy-image-2.jpg" slot="header" />
       <h3 slot="header">Image Example</h3>
       <div>
@@ -67,15 +67,15 @@
   /* ... */</pre>
         by default. So to make it work in IE, Edge you need a polyfill for object-fit.
       </div>
-    </ing-uic-card>
+    </extended-card>
 
 
-<h2 class="font-b-xl">An example of a custom <code>&lt;ing-uic-card&gt;</code>:</h2>
+<h2 class="font-b-xl">An example of a custom <code>&lt;extended-card&gt;</code>:</h2>
 
     <custom-style>
       <style is="custom-style">
         #custom-card {
-          --ing-uic-card-header-border-bottom: 2px dashed var(--ing-orange);
+          --extended-card-header-border-bottom: 2px dashed orange;
         }
 
         #custom-card .header {
@@ -90,7 +90,7 @@
         }
       </style>
     </custom-style>
-    <ing-uic-card id="custom-card">
+    <extended-card id="custom-card">
       <div slot="header" class="header">
         <h3>Title</h3>
         <span>Element</span>
@@ -98,7 +98,7 @@
       <div>
         Card content
       </div>
-    </ing-uic-card>
+    </extended-card>
 
 </body>
 </html>

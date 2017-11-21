@@ -1,4 +1,4 @@
-class IngUicCard extends SimpleCard {
+class ExtendedCard extends SimpleCard {
   get styleTemplate() {
     return html`
         ${super.styleTemplate}
@@ -8,7 +8,7 @@ class IngUicCard extends SimpleCard {
             border-radius: 4px;
           }
       
-         #footer ::slotted(*) {
+         #footer {
           padding: calc(var(--spacer-vertical, 8px) * 3) calc(var(--spacer-horizontal, 8px) * 3);
            border-top: 1px solid var(--divider-color, #d5d5d5);
            background-color: #f2f2f2;
@@ -24,13 +24,30 @@ class IngUicCard extends SimpleCard {
         </style>
       `;
   }
-
-  get footerTemplate() {
-    return html`
-    ${super.footerTemplate}
-   `;
+  static get properties() {
+    return {
+      lastUpdated: {
+        type: String,
+        value: '',
+        reflectToAttribute: 'last-updated',
+      }
+    };
   }
-
+  get footerTemplate() {
+    if (this.lastUpdated) {
+    return html`
+    <footer id="footer">
+    Last updated ${this.lastUpdated} mins ago
+    </footer>
+    `;}
+    else {
+      return html`
+      <footer id="footer">
+      Not updated recently!
+      </footer>
+      `;
+    }
+  }
   render() {
     return html`
       ${this.styleTemplate}
@@ -44,4 +61,4 @@ class IngUicCard extends SimpleCard {
 
 }
 
-customElements.define('ing-uic-card', IngUicCard);
+customElements.define('extended-card', ExtendedCard);

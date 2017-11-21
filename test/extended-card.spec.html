@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <!-- Step 1: import the element to test -->
+    <link rel="import" href="../extended-card.html">
+</head>
+<body>
+
+<!-- You can use the document as a place to set up your fixtures. -->
+<test-fixture id="extended-card-fixture">
+    <template>
+        <extended-card>
+            <h3 slot="header">Title</h3>
+            <div slot="body">Content</div>
+        </extended-card>
+    </template>
+</test-fixture>
+
+<script>
+    describe('extended-card', function() {
+
+        context('default card', function() {
+            var element;
+
+            beforeEach(function() {
+                element = fixture('extended-card-fixture');
+            });
+
+            it('elements exists', function() {
+                var header = element.querySelector('[slot=header]');
+                var body = element.querySelector('[slot=body]');
+
+                expect(header).to.exist;
+                expect(body).to.exist;
+            });
+
+            it('projects content', function() {
+                var contentElems = element.getContentChildren();
+                expect(contentElems.length).to.equal(1);
+                expect(contentElems[0]).to.equal(element.querySelector('h3'));
+            });
+        });
+    });
+
+    a11ySuite('extended-card-fixture');
+</script>
+
+</body>
+</html>
