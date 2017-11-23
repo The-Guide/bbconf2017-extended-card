@@ -1,104 +1,61 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>Extended-card Demo</title>
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <meta name="viewport"
+        content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>extended-card Demo</title>
 
   <link rel="import" href="../extended-card.html">
 
+  <style>
+    body {
+      width: 90%;
+      max-width: 980px;
+      background-color: #f5f5f5;
+      margin: 0 auto 32px;
+    }
+  </style>
 </head>
-<body unresolved style="width: 90%; max-width: 980px; margin:0 auto;">
+<body>
 
-<h1 class="sr-only">Example page of the extended-card</h1>
+<h1>Example page of the extended-card</h1>
 
-<h2 class="font-b-xl">An basic example</h2>
+<h2>An basic example</h2>
 
-    <extended-card last-updated="6">
-      <h3 slot="header">Title</h3>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius quam quam. Praesent gravida urna id
-        nunc luctus, nec varius tortor tristique. Mauris non sem vel magna consectetur sodales. Aenean ut urna
-        sodales, auctor elit condimentum, cursus neque. Sed quam mauris, ultricies ac congue ut, volutpat
-        volutpat dui. Quisque sagittis diam et justo fringilla condimentum. Cras ut dignissim dolor, nec
-        efficitur mi. Praesent vitae consectetur odio. Donec lectus nulla, tristique eget lacinia consequat,
-        porttitor in arcu. Fusce mattis nec leo nec vulputate. In hac habitasse platea dictumst.
-      </div>
-      <div slot="footer">
-        Last updated 3 mins ago
-      </div>
-    </extended-card>
-
-
-<h2 class="font-b-xl">An example without header</h2>
-
-    <extended-card>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius quam quam. Praesent gravida urna id
-        nunc luctus, nec varius tortor tristique. Mauris non sem vel magna consectetur sodales. Aenean ut urna
-        sodales, auctor elit condimentum, cursus neque. Sed quam mauris, ultricies ac congue ut, volutpat
-        volutpat dui. Quisque sagittis diam et justo fringilla condimentum. Cras ut dignissim dolor, nec
-        efficitur mi. Praesent vitae consectetur odio. Donec lectus nulla, tristique eget lacinia consequat,
-        porttitor in arcu. Fusce mattis nec leo nec vulputate. In hac habitasse platea dictumst.
-      </div>
+<extended-card last-updated="6">
+  <h3 slot="header">Title</h3>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius quam quam. Praesent gravida
+    urna id
+    nunc luctus, nec varius tortor tristique. Mauris non sem vel magna consectetur sodales. Aenean
+    ut urna
+    sodales, auctor elit condimentum, cursus neque. Sed quam mauris, ultricies ac congue ut,
+    volutpat
+    volutpat dui. Quisque sagittis diam et justo fringilla condimentum. Cras ut dignissim dolor, nec
+    efficitur mi. Praesent vitae consectetur odio. Donec lectus nulla, tristique eget lacinia
+    consequat,
+    porttitor in arcu. Fusce mattis nec leo nec vulputate. In hac habitasse platea dictumst.
+  </div>
+</extended-card>
 
 
-    </extended-card>
-
-
-<h2 class="font-b-xl">An example of an article card</h2>
-<p>
-  This is an example of the article card which has an image on top, a title and body text.
-</p>
-
-    <extended-card>
-      <img src="assets/images/dummy-image-2.jpg" slot="header" />
-      <h3 slot="header">Image Example</h3>
-      <div>
-        If you add an image to the header it gets
-        <pre style="font-size: 10px;">
-  padding: 0;
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
-  /* ... */</pre>
-        by default. So to make it work in IE, Edge you need a polyfill for object-fit.
-      </div>
-    </extended-card>
-
-
-<h2 class="font-b-xl">An example of a custom <code>&lt;extended-card&gt;</code>:</h2>
-
-    <custom-style>
-      <style is="custom-style">
-        #custom-card {
-          --extended-card-header-border-bottom: 2px dashed orange;
-        }
-
-        #custom-card .header {
-          @apply --background-indigo;
-          border-top-left-radius: var(--border-radius-sm);
-          border-top-right-radius: var(--border-radius-sm);
-        }
-
-        #custom-card h3 {
-          @apply --font-size-xl;
-          margin-bottom: 0;
-        }
-      </style>
-    </custom-style>
-    <extended-card id="custom-card">
-      <div slot="header" class="header">
-        <h3>Title</h3>
-        <span>Element</span>
-      </div>
-      <div>
-        Card content
-      </div>
-    </extended-card>
+<h2>An example without last-updated time stamp</h2>
+<extended-card>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius quam quam. Praesent gravida
+    urna id
+    nunc luctus, nec varius tortor tristique. Mauris non sem vel magna consectetur sodales. Aenean
+    ut urna
+    sodales, auctor elit condimentum, cursus neque. Sed quam mauris, ultricies ac congue ut,
+    volutpat
+    volutpat dui. Quisque sagittis diam et justo fringilla condimentum. Cras ut dignissim dolor, nec
+    efficitur mi. Praesent vitae consectetur odio. Donec lectus nulla, tristique eget lacinia
+    consequat,
+    porttitor in arcu. Fusce mattis nec leo nec vulputate. In hac habitasse platea dictumst.
+  </p>
+</extended-card>
 
 </body>
 </html>

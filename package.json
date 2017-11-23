@@ -2,14 +2,12 @@
   "name": "extended-card",
   "version": "0.0.1",
   "description": "An extended-card is a sheet of material that serves as an entry point to more detailed information.",
-  "main": "all-imports.html",
+  "main": "extended-card.html",
   "devDependencies": {
-    "concurrently": "^3.5.0",
-    "http-server": "0.9.0",
-    "bower-art-resolver": "^2.0.6"
+    "polyserve": "0.23.0"
   },
   "scripts": {
-    "start": "http-server -p 8080"
+    "start": "polyserve -o"
   },
   "repository": {
     "type": "git",
